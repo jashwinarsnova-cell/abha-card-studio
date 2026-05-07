@@ -870,7 +870,7 @@ class ActivationScreen(ctk.CTkToplevel):
         ctk.CTkLabel(inner, text="Product Activation",
                      font=ctk.CTkFont("Arial", 18, weight="bold"),
                      text_color=T("TEXT_1")).pack()
-        ctk.CTkLabel(inner, text="ABHA Card Studio  ·  v5.2",
+        ctk.CTkLabel(inner, text="ABHA Card Studio  ·  v5.3",
                      font=ctk.CTkFont("Arial", 9),
                      text_color="#FFFFFF").pack(pady=(2, 16))
         s1 = ctk.CTkFrame(inner, fg_color=T("ACCENT_DIM"), corner_radius=10,
@@ -988,7 +988,7 @@ class LoadingScreen(ctk.CTkToplevel):
         ctk.CTkLabel(inner, text="ABHA Card Studio",
                      font=ctk.CTkFont("Arial", 20, weight="bold"),
                      text_color=T("TEXT_1")).pack()
-        ctk.CTkLabel(inner, text="v5.2",
+        ctk.CTkLabel(inner, text="v5.3",
                      font=ctk.CTkFont("Arial", 9),
                      text_color=T("TEXT_3")).pack(pady=(2, 20))
         if _is_demo_mode():
@@ -2995,7 +2995,7 @@ def build_ui():
                  font=ctk.CTkFont("Arial", 14, weight="bold"),
                  text_color="#FFFFFF").pack(side="left", pady=18)
 
-    _pill_label(navbar, "v5.2", "#FFFFFF", T("ACCENT")).pack(
+    _pill_label(navbar, "v5.3", "#FFFFFF", T("ACCENT")).pack(
         side="left", padx=(10, 0), pady=20)
 
     ctk.CTkFrame(navbar, width=1, fg_color=T("BORDER"),
@@ -3215,7 +3215,7 @@ def build_ui():
     info_f = ctk.CTkFrame(left_panel, fg_color="transparent")
     info_f.pack(side="bottom", fill="x", padx=18, pady=14)
     ctk.CTkFrame(info_f, height=1, fg_color=T("BORDER"), corner_radius=0).pack(fill="x", pady=(0, 8))
-    ctk.CTkLabel(info_f, text="ABHA Card Studio  v5.2",
+    ctk.CTkLabel(info_f, text="ABHA Card Studio  v5.3",
                  font=ctk.CTkFont("Arial", 8), text_color=T("TEXT_3")).pack(anchor="w")
 
     preview_area = ctk.CTkFrame(single_tab, fg_color=T("BG_ROOT"), corner_radius=0)
@@ -3671,6 +3671,8 @@ def main():
     app = ctk.CTk()
     # Initialize Tkinter variables after root is created
     _doc_type_var = tk.StringVar(value="ABHA")
+    from auto_updater import check_for_update
+    check_for_update()
     _card_lang_var = None  # Will be set in build_ui()
 
     app.geometry("1280x760")
@@ -3732,3 +3734,4 @@ def main():
     app.mainloop()
 if __name__ == "__main__":
     main()
+
