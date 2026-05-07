@@ -1,0 +1,6 @@
+dist/ 
+installer_output/ 
+__pycache__/ 
+*.exe 
+*.dll 
+*.pyd 
