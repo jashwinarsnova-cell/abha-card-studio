@@ -18,9 +18,9 @@ from tkinter import messagebox
 from packaging import version  # pip install packaging
 
 # ── CONFIG — update these two lines only ──────────────────────
-GITHUB_USER    = "your-github-username"   # e.g. "john"
-GITHUB_REPO    = "your-repo-name"         # e.g. "abha-card-studio"
-CURRENT_VERSION = "5.2"                   # must match your AppVersion in .iss
+GITHUB_USER     = "jashwinarsnova-cell"
+GITHUB_REPO     = "abha-card-studio"
+CURRENT_VERSION = "5.3"
 # ─────────────────────────────────────────────────────────────
 
 API_URL = f"https://api.github.com/repos/{GITHUB_USER}/{GITHUB_REPO}/releases/latest"
@@ -148,3 +148,4 @@ def check_for_update(silent_if_latest=True):
     # Run in background thread so it doesn't block app startup
     thread = threading.Thread(target=_check, daemon=True)
     thread.start()
+
